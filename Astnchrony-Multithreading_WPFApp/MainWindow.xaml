@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:Astnchrony_Multithreading_WPFApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <Label Content="Prime-Fibonacci Number Generator" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Lower Bound:" VerticalAlignment="Center"/>
+            <TextBox x:Name="lowerBoundTextBox" Width="50" Margin="5"/>
+            <Label Content="Upper Bound:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox x:Name="upperBoundTextBox" Width="50" Margin="5"/>
+        </StackPanel>
+
+        <Button Content="Generate" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Click="GenerateButton_Click" Margin="230 10 0 0"/>
+        <Button Content="Restart Threads" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Click="RestartThreads_Click" Margin="400 10 0 0"/>
+        <Button Content="Stop Prime Thread" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Click="StopPrimeThread_Click" Margin="30 10 0 0"/>
+        <Button Content="Stop Fibonacci Thread" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Click="StopFibonacciThread_Click" Margin="570 10 10 0"/>
+        
+        <Button Content="Pause Prime Thread" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Click="PausePrimeThread_Click" Margin="210 0 0 0"/>
+        <Button Content="Resume Prime Thread" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Click="ResumePrimeThread_Click" Margin="210 50 0 0"/>
+        <Button Content="Pause Fibonacci Thread" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Width="150" Click="PauseFibonacciThread_Click" Margin="0 0 210 0"/>
+        <Button Content="Resume Fibonacci Thread" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Width="150" Click="ResumeFibonacciThread_Click" Margin="0 50 210 0"/>
+        
+        
+        <ListBox x:Name="primeListBox" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="200" Margin="5"/>
+        <ListBox x:Name="fibonacciListBox" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="200" Margin="5"/>
+
+        <TextBlock Text="Instructions: Enter the lower and upper bounds (optional) and click 'Generate'." Grid.Row="4" TextWrapping="Wrap" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
